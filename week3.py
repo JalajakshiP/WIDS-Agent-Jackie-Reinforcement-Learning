@@ -45,7 +45,7 @@ class MDP:
         output_file = f"sol-{self.mdptype}-mdp-{self.num_states}-{self.num_actions}.txt"
         with open(output_file, 'w') as outfile:
             for i in range(num_states):
-                outfile.write(f"{V[i]} {pi[i]}\n")
+                outfile.write(f"{np.round(V[i],6)} {pi[i]}\n")
    
     def episodic_mdp_solving(self):
         V=np.zeros(self.num_states)
@@ -82,7 +82,7 @@ class MDP:
         output_file = f"sol-{self.mdptype}-mdp-{self.num_states}-{self.num_actions}.txt"
         with open(output_file, 'w') as outfile:
             for i in range(num_states):
-                outfile.write(f"{V[i]} {pi[i]}\n")
+                outfile.write(f"{np.round(V[i],6)} {pi[i]}\n")
 
 if __name__ == "__main__":
     input_files = ["continuing-mdp-2-2.txt","continuing-mdp-10-5.txt","continuing-mdp-50-20.txt","episodic-mdp-2-2.txt","episodic-mdp-10-5.txt","episodic-mdp-50-20.txt"] # Replace with your input file
